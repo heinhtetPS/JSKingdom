@@ -1,5 +1,7 @@
 # JSKingDOM
 
+[Live Demo](https://heinhtetps.github.io/JSKingdom/)
+
 Be the king of the DOM elements inside your HTML page and rule them with an iron fist.
 
 JSKingDOM is a simple DOM interaction library, inspired by Jquery, that allows users to easily access and manipulate DOM elements. With JSKingDOM, Users will be able to:
@@ -14,6 +16,7 @@ Legend says that he or she who wields the King's symbol of power will obtain the
 
 - You can select HTML element types such as spans or divs by simply providing a string argument to the king's symbol $k("string_argument").
 - You can also select particular classNames or IDs by providing those as arguments.
+- Also grants the ability to summon content from across the web with Ajax requests ($k.ajax(options)
 
 ## How it Works
 
