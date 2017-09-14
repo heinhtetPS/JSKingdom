@@ -62,4 +62,6 @@ Sends an ajax request that fetches data asynchronously.
 
 ## Demo
 
+[Live Demo](https://heinhtetps.github.io/JSKingdom/)
+
 To explore the functionality and efficacy of the King's symbol, a sandbox environment has been constructed, in which users can see and interact with concrete examples of the $k in use. Please check out this live demo and see for yourself.  
