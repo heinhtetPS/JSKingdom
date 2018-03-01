@@ -1,0 +1,27 @@
+{
+  "name": "JSKingdom",
+  "version": "1.0.0",
+  "description": "[Live Demo](https://heinhtetps.github.io/JSKingdom/)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heinhtetPS/JSKingdom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heinhtetPS/JSKingdom/issues"
+  },
+  "homepage": "https://github.com/heinhtetPS/JSKingdom#readme",
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
+  }
+}

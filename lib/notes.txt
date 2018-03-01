@@ -1,3 +1,6 @@
 - Add buttons to show instant change functions
 - Add weather widget for ajax request show
 - List thing needs to change upon clicking stuff also
+
+- Damn this was more messed up than I thought.
+- Needed to reinstall webpack redo some of that functionality

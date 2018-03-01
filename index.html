@@ -5,12 +5,12 @@
     <title>JSKingDOM Sandbox</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript"src="lib/jskingdom.js"></script>
-    <script type="text/javascript"src="lib/dom_node_collection.js"></script>
     <script type="text/javascript">
         $k( () => {
           $k('.third-box').on('click', () => {
             $k('.first-box').toggleClass('crazy');
             $k('.second-box').toggleClass('crazy');
+            $k('.third-box').toggleClass('crazy');
           });
         }
 
@@ -18,9 +18,19 @@
     </script>
     <style media="screen">
 
+      .first-box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .second-box {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+      }
 
       .crazy {
-        color: magenta;
         background-color: magenta;
       }
 
@@ -33,22 +43,15 @@
     flex-direction: row;
     justify-content: space-around;">
 
-      <div class="first-box" style="
-      width: 100px;
-      height: 100px;
-      background-color: blue;">
-        <div class="second-box" style="
-        width: 30px;
-        height: 30px;
-        background-color: red;">
+      <div class="first-box">
+        <div class="second-box">
         </div>
       </div>
 
-      <div class="third-box"style="
+      <div class="third-box crazy"style="
       width: 65px;
-      height: 55px;
-      background-color: yellow;">
-      <p> Click me! </p>
+      height: 55px;">
+      <p> Swap Color! </p>
       </div>
 
       <!-- <ul id="link-list">
