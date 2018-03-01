@@ -8,13 +8,36 @@
     <script type="text/javascript">
         $k( () => {
           $k('.third-box').on('click', () => {
-            $k('.first-box').toggleClass('crazy');
-            $k('.second-box').toggleClass('crazy');
-            $k('.third-box').toggleClass('crazy');
+            $k('.first-box').toggleClass('swap');
+            $k('.second-box').toggleClass('swap');
+            $k('.third-box').toggleClass('swap');
           });
-        }
+        });
 
-        )
+          $k( () => {
+            $k('.adder').on('click', () => {
+              $k('.link-list').append('<li>A new HTMLElement is generated!</li>');
+              console.log("click success");
+            });
+          })
+
+          $k( () => {
+            $k('.weather').on('click', () => {
+              $k.ajax({
+                type: 'GET',
+                url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=bcb83c4b54aee8418983c2aff3073b3b",
+                success(data) {
+                  $k('.weatherbox').append('<p>Weather</p>')
+                },
+                error() {
+                  console.error("An error has occured.")
+                }
+              })
+
+            });
+          })
+
+
     </script>
     <style media="screen">
 
@@ -24,13 +47,7 @@
         border: 1px solid black;
       }
 
-      .second-box {
-        width: 30px;
-        height: 30px;
-        border: 1px solid black;
-      }
-
-      .crazy {
+      .swap {
         background-color: magenta;
       }
 
@@ -48,23 +65,25 @@
         </div>
       </div>
 
-      <div class="third-box crazy"style="
-      width: 65px;
-      height: 55px;">
+      <div class="third-box swap"style="
+      width: 100px;
+      height: 100px;">
       <p> Swap Color! </p>
       </div>
 
-      <!-- <ul id="link-list">
-        <li><a href="https://github.com/heinhtetPS/JSKingdom">How do I use this?</a></li>
+        <button class="adder">Add new List Item</button>
+      <ul class="link-list">
+        <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
-        <li>Item 4</li>
-      </ul> -->
+      </ul>
 
       <div class="weatherbox" style="
       width: 300px;
       height: 300px;
       background-color: gainsboro;">
+
+      <button type="button" class="weather">Get Weather</button>
 
       </div>
 
