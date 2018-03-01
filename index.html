@@ -5,6 +5,26 @@
     <title>JSKingDOM Sandbox</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript"src="lib/jskingdom.js"></script>
+    <script type="text/javascript"src="lib/dom_node_collection.js"></script>
+    <script type="text/javascript">
+        $k( () => {
+          $k('.third-box').on('click', () => {
+            $k('.first-box').toggleClass('crazy');
+            $k('.second-box').toggleClass('crazy');
+          });
+        }
+
+        )
+    </script>
+    <style media="screen">
+
+
+      .crazy {
+        color: magenta;
+        background-color: magenta;
+      }
+
+    </style>
   </head>
   <body>
     <h1 style="text-align: center;">Welcome to your JSKingDOM sandbox</h1>
@@ -18,24 +38,25 @@
       height: 100px;
       background-color: blue;">
         <div class="second-box" style="
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         background-color: red;">
         </div>
       </div>
 
       <div class="third-box"style="
-      width: 50px;
-      height: 50px;
+      width: 65px;
+      height: 55px;
       background-color: yellow;">
+      <p> Click me! </p>
       </div>
 
-      <ul id="link-list">
+      <!-- <ul id="link-list">
         <li><a href="https://github.com/heinhtetPS/JSKingdom">How do I use this?</a></li>
         <li>Item 2</li>
         <li>Item 3</li>
         <li>Item 4</li>
-      </ul>
+      </ul> -->
 
       <div class="weatherbox" style="
       width: 300px;
