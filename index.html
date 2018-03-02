@@ -17,7 +17,12 @@
           $k( () => {
             $k('.adder').on('click', () => {
               $k('.link-list').append('<li>A new HTMLElement is generated!</li>');
-              console.log("click success");
+            });
+          })
+
+          $k( () => {
+            $k('.colors').on('click', () => {
+              $k('.page-container').toggleClass('crazy');
             });
           })
 
@@ -25,9 +30,9 @@
             $k('.weather').on('click', () => {
               $k.ajax({
                 type: 'GET',
-                url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=bcb83c4b54aee8418983c2aff3073b3b",
+                url: "http://api.openweathermap.org/data/2.5/weather?id=5128581&appid=bcb83c4b54aee8418983c2aff3073b3b",
                 success(data) {
-                  $k('.weatherbox').append('<p>Weather</p>')
+                  buildWeather(JSON.parse(data.target.response));
                 },
                 error() {
                   console.error("An error has occured.")
@@ -37,9 +42,38 @@
             });
           })
 
+    const buildWeather = (data) => {
+      let theDate = new Date();
+      let y = theDate.getFullYear();
+      let m = theDate.getMonth() + 1;
+      let d = theDate.getDate();
+      let dateElement = '<p>Today: ' + m + "/" + d + "/" + y + '</p>'
+
+      let forecastElement = '<p>Forecast: ' + data.weather[0].main + ', ' + data.weather[0].description
+
+      let minElement = '<p>Temp(Min): ' + data.main.temp_min
+      let maxElement = '<p>Temp(Max): ' + data.main.temp_max
+
+      let icon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+
+      $k('.weather-results').append('<h2>Weather in NYC</h2>')
+      $k('.weather-results').append(dateElement)
+      $k('.weather-results').append(forecastElement)
+      $k('.weather-results').append(minElement)
+      $k('.weather-results').append(maxElement)
+      $k('.weather-icon').attr('src', icon)
+    }
+
 
     </script>
     <style media="screen">
+
+      .page-container {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
 
       .first-box {
         width: 100px;
@@ -51,14 +85,25 @@
         background-color: magenta;
       }
 
+      .crazy {
+        -webkit-animation: colorchange 5s infinite;
+      }
+
+      @keyframes colorchange {
+        0%   {background-color: red;}
+        20%  {background-color: orange;}
+        40%  {background-color: yellow;}
+        60%  {background-color: green;}
+        80% {background-color: blue;}
+        100% {background-color: purple;}
+      }
+
     </style>
   </head>
   <body>
-    <h1 style="text-align: center;">Welcome to your JSKingDOM sandbox</h1>
-    <div className="page-container" style="
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;">
+
+    <div class="page-container" >
+      <h1 style="text-align: center; width:100%">Welcome to your JSKingDOM sandbox</h1>
 
       <div class="first-box">
         <div class="second-box">
@@ -68,22 +113,32 @@
       <div class="third-box swap"style="
       width: 100px;
       height: 100px;">
-      <p> Swap Color! </p>
+      <p> Click to Swap Color! </p>
       </div>
+        <button class="colors">Crazy Colors</button>
 
-        <button class="adder">Add new List Item</button>
-      <ul class="link-list">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
+
+        <div class="list-container">
+          <button class="adder">Add new List Item</button>
+          <ul class="link-list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </div>
+
 
       <div class="weatherbox" style="
       width: 300px;
       height: 300px;
-      background-color: gainsboro;">
+      background-color: gainsboro;
+      line-height: 0.5;">
 
       <button type="button" class="weather">Get Weather</button>
+
+      <div class="weather-results">
+        <img src="" alt="" class="weather-icon">
+      </div>
 
       </div>
 
