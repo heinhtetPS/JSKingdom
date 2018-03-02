@@ -6,4 +6,5 @@
 - Needed to reinstall webpack redo some of that functionality
 
 - Success was achieved through recognizing capitalization error
-- Swap colors complete, need list add func, crazy colors css and ajax 
+- Swap colors complete, need list add func, crazy colors css and ajax
+- All scripts working, need to seperate them into neat files
