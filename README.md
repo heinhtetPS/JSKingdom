@@ -43,7 +43,7 @@ At its core, JSKingDOM works by converting regular html page elements like divs 
 
 Below are some examples of how users can manipulate DOM elements once they have succumb to the power of $k:
 
-Note that functions can be chained and used consequetively.
+Note that functions can be chained and used consecutively.
 
 ### each(callback)
 Shorthand for running a ForEach loop that applies the callback to all included DOM elements.
