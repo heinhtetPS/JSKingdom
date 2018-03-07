@@ -5,69 +5,8 @@
     <title>JSKingDOM Sandbox</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript"src="lib/jskingdom.js"></script>
-    <script type="text/javascript">
-        $k( () => {
-          $k('.third-box').on('click', () => {
-            $k('.first-box').toggleClass('swap');
-            $k('.second-box').toggleClass('swap');
-            $k('.third-box').toggleClass('swap');
-          });
-        });
 
-          $k( () => {
-            $k('.adder').on('click', () => {
-              $k('.link-list').append('<li>A new HTMLElement is generated!</li>');
-            });
-          })
-
-          $k( () => {
-            $k('.colors').on('click', () => {
-              $k('.page-container').toggleClass('crazy');
-            });
-          })
-
-          $k( () => {
-            $k('.weather').on('click', () => {
-              $k.ajax({
-                type: 'GET',
-                url: "http://api.openweathermap.org/data/2.5/weather?id=5128581&appid=bcb83c4b54aee8418983c2aff3073b3b",
-                success(data) {
-                  buildWeather(JSON.parse(data.target.response));
-                },
-                error() {
-                  console.error("An error has occured.")
-                }
-              })
-
-            });
-          })
-
-    const buildWeather = (data) => {
-      let theDate = new Date();
-      let y = theDate.getFullYear();
-      let m = theDate.getMonth() + 1;
-      let d = theDate.getDate();
-      let dateElement = '<p>Today: ' + m + "/" + d + "/" + y + '</p>'
-
-      let forecastElement = '<p>Forecast: ' + data.weather[0].main + ', ' + data.weather[0].description
-
-      let minElement = '<p>Temp(Min): ' + data.main.temp_min
-      let maxElement = '<p>Temp(Max): ' + data.main.temp_max
-
-      let icon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
-
-      $k('.weather-results').append('<h2>Weather in NYC</h2>')
-      $k('.weather-results').append(dateElement)
-      $k('.weather-results').append(forecastElement)
-      $k('.weather-results').append(minElement)
-      $k('.weather-results').append(maxElement)
-      $k('.weather-icon').attr('src', icon)
-    }
-
-
-    </script>
     <style media="screen">
-
       .page-container {
         display:flex;
         flex-direction: row;

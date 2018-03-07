@@ -64,4 +64,4 @@ Sends an ajax request that fetches data asynchronously.
 
 [Live Demo](https://heinhtetps.github.io/JSKingdom/)
 
-To explore the functionality and efficacy of the King's symbol, a sandbox environment has been constructed, in which users can see and interact with concrete examples of the $k in use. Please check out this live demo and see for yourself.  
+To explore the functionality and efficacy of the King's symbol, a sandbox environment has been constructed, in which users can see and interact with concrete examples of the $k in use. Please check out this live demo and see for yourself. It includes a few examples of toggleClass() being used to change a single or multiple HTML elements' styling in real time, an example of generating HTML elements and finally a demo of an AJAX call retrieving data from a Weather API.
