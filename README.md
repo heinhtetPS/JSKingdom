@@ -2,7 +2,6 @@
 
 [Live Demo](https://heinhtetps.github.io/JSKingdom/)
 
-### My info
 Linkedin: https://www.linkedin.com/in/heinhtetps
 Github: https://github.com/heinhtetPS
 Portfolio: http://heinhtetps.info
